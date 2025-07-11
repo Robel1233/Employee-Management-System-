@@ -95,7 +95,26 @@ int main() {
             }
 
         } else if (choice == 3) {
-            /* ... rest of the search code remains exactly the same ... */
+             if (count == 0) {
+                cout << "No employees in the system.\n";
+                continue;
+            }
+
+            int searchId;
+            cout << "Enter employee ID to search: ";
+            cin >> searchId;
+
+            bool found = false;
+            for (int i = 0; i < count; i++) {
+                if (ids[i] == searchId) {
+                    cout << "\nEmployee Found:\n";
+                    cout << "ID: " << ids[i] << "\n";
+                    cout << "Name: " << names[i] << "\n";
+                    cout << "Position: " << positions[i] << "\n";
+                    found = true;
+                    break;
+                }
+            }
         } else if (choice == 4) {
             cout << "Exiting the system. Goodbye!\n";
             break;
